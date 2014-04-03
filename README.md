@@ -4,6 +4,6 @@ moonline.zsh provides a modern prompt for zsh.
 
 ###Image
 
-default theme:
+default color scheme:
 
-![default theme](https://raw.github.com/wiki/kagamilove0707/moonline.vim/images/moonline_default.vim)
+![default color scheme](https://raw.github.com/wiki/kagamilove0707/moonline.zsh/images/moonline_default.png)
