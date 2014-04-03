@@ -29,7 +29,7 @@ This software is released under the MIT License, see LICENSE.
 install with the following command.
 
 ```
-git clone https://github.com/kagamilove0707/moonline.zsh ~/.moonline
+git clone https://github.com/kagamilove0707/moonline.zsh.git ~/.moonline
 echo "test -f ~/.moonline/moonline.zsh && source ~/.moonline/.moonline.zsh" >> .zshrc
 source .zshrc
 ```
