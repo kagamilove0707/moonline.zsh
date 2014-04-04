@@ -38,4 +38,20 @@ but this is a one example, you should install moonline.vim to your dotfiles dire
 
 (or you used antigen, append `antigen bundle kagamilove0707/moonline.zsh` to `.zshrc`. however, antigen isn't save my spirit. so, I don't use antigen.)
 
+##TODO
+
+  * write a tutorial, reference of the configuration and `moonline` command.
+  * create more components.
+  * create more color scheme.
+
+##Contributation
+
+  1. fork this repository (<https://github.com/kagamilove0707/moonline.zsh/fork>)
+  2. clone your workspace (`git clone https://github.com/<your-name>/moonline.zsh`)
+  3. checkout a branch (`git checkout -b <your-feature>`)
+  4. commit and push your change (`git commit -a "add mY feature" && git push origin <your-feature>`)
+  5. pull request!
+
+I want to see your contribution!
+
 [lightline.vim]: https://github.com/itchyny/lightline.vim
