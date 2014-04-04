@@ -26,7 +26,7 @@ This software is released under the MIT License, see LICENSE.
 
 ##Installation
 
-install with the following command.
+install with the following commands.
 
 ```
 git clone https://github.com/kagamilove0707/moonline.zsh.git ~/.moonline
@@ -34,5 +34,8 @@ echo "test -f ~/.moonline/moonline.zsh && source ~/.moonline/.moonline.zsh" >> .
 source .zshrc
 ```
 
+but this is a one example, you should install moonline.vim to your dotfiles directory.
+
+(or you used antigen, append `antigen bundle kagamilove0707/moonline.zsh` to `.zshrc`. however, antigen isn't save my spirit. so, I don't use antigen.)
 
 [lightline.vim]: https://github.com/itchyny/lightline.vim
