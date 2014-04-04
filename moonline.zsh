@@ -36,6 +36,7 @@ fpath+=(
   "$MOONLINE_HOME/functions"
 )
 autoload -Uz moonline-initialize
+autoload -Uz moonline-version
 
 moonline() {
   moonline-${1} ${*[2,-1]}
