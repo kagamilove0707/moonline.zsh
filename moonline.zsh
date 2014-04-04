@@ -98,7 +98,9 @@ moonline_initialize() {
     fi
   done
   if [ "$PROMPT" != '' ]; then
-    PROMPT=$'\n'"$PROMPT%{%f%k%} "
+    PROMPT+="%{%k%}"
+    PROMPT+="$sepl"
+    PROMPT=$'\n'"$PROMPT%{%f%} "
   fi
 
   # set right prompt
