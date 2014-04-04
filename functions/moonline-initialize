@@ -1,0 +1,107 @@
+-moonline-setup() {
+  autoload -Uz colors; colors
+}
+
+-moonline-load-colorscheme() {
+  local flag=''
+  local path
+
+  for path in $moonline_colorscheme_path; do
+    if [ -f "$path/$MOONLINE_COLORSCHEME.zsh" ]; then
+      source "$path/$MOONLINE_COLORSCHEME.zsh"
+      flag='true'
+      break
+    fi
+  done
+  if [[ "$flag" = '' ]]; then
+    echo "$MOONLINE_COLORSCHEME is not found."
+    return 1
+  fi
+  return 0
+}
+
+-moonline-initialize() {
+  -moonline-setup
+  -moonline-load-colorscheme
+
+  # alias global variables
+  local sepl=$MOONLINE_SEPARATOR[1]
+  local sepr=$MOONLINE_SEPARATOR[2]
+  local subsepl=$MOONLINE_SUBSEPARATOR[1]
+  local subsepr=$MOONLINE_SUBSEPARATOR[2]
+  local target
+  local prompts
+  local content 
+  local flag
+  local color
+  local i
+  local j
+  local left
+  local right
+
+  # initialize prompts
+  PROMPT=''
+  RPROMPT=''
+
+  # set left prompt
+  for j in {1..$MOONLINE_LEFT_LINE}; do
+    content=''
+    flag=''
+    for i in {1..4}; do
+      target=(${(z)$(eval "echo \$MOONLINE_LEFT${j}_${i}")})
+      if [[ 0 < $#target ]]; then
+        # set color
+        color=(${(z)$(eval "echo \$MOONLINE_COLOR_LEFT${j}_${i}")})
+        content+="%{"
+        content+=$'\e'"[48;5;${color[2]}m%}"
+        content+="$flag %{"
+        content+=$'\e'"[38;5;${color[1]}m%}"
+
+        # set content
+        prompts=()
+        for left in $target; do
+          prompts+=(${MOONLINE_COMPONENTS[$left]})
+        done
+        content+=$(eval "echo \${(j: $subsepl :)prompts}")
+
+        content+="%{"$'\e'"[38;5;${color[2]}m%} "
+        flag="$sepl"
+      fi
+    done
+    if [ "$content" != '' ]; then
+      content+="%{%k%}"
+      content+="$sepl"
+      PROMPT+=$'\n'"$content%{%f%} "
+    fi
+  done
+
+  # set right prompt
+  for i in {1..4}; do
+    target=(${(z)$(eval "echo \$MOONLINE_RIGHT${i}")})
+    if [[ 0 < $#target ]]; then
+      # set color
+      color=(${(z)$(eval "echo \$MOONLINE_COLOR_RIGHT${i}")})
+      RPROMPT+="%{"$'\e'"[38;5;${color[2]}m%}"
+      RPROMPT+="$sepr"
+      RPROMPT+="%{"
+      RPROMPT+=$'\e'"[38;5;${color[1]}m"
+      RPROMPT+=$'\e'"[48;5;${color[2]}m"
+      RPROMPT+="%}"
+      RPROMPT+=" "
+
+      prompts=()
+      for right in $target; do
+        prompts=(${MOONLINE_COMPONENTS[$right]})
+      done
+      RPROMPT+="${(j: ${subsepr} :)prompts}"
+
+      RPROMPT+=" "
+    fi
+  done
+  if [ "$RPROMPT" != '' ]; then
+    RPROMPT+="%{%f%k%}"
+  fi
+}
+
+-moonline-initialize
+# vim: filetype=zsh
