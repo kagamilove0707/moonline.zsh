@@ -30,8 +30,8 @@ install with the following commands.
 
 ```
 git clone https://github.com/kagamilove0707/moonline.zsh.git ~/.moonline
-echo "test -f ~/.moonline/moonline.zsh && source ~/.moonline/.moonline.zsh" >> .zshrc
-source .zshrc
+echo "test -f ~/.moonline/moonline.zsh && source ~/.moonline/.moonline.zsh" >> ~/.zshrc
+source ~/.zshrc
 ```
 
 but this is a one example, you should install moonline.vim to your dotfiles directory.
