@@ -43,7 +43,7 @@ fpath+=(
 # define subcommands
 (){
   local subcommand
-  for subcommand ($MOONLINE_HOME/subcommands); do
+  for subcommand ($MOONLINE_HOME/subcommands/*); do
     autoload -Uz $subcommand
   done
 }
