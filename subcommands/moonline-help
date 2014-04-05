@@ -1,0 +1,11 @@
+cat <<EOHELP
+Usage:
+  moonline <subcommand> [options]
+
+Subcommands:
+  initialize  setup and initialize moonline.zsh
+  version     show version
+  help        show this help
+
+EOHELP
+# vim: filetype=zsh
