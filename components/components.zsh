@@ -1,6 +1,10 @@
-typeset -A MOONLINE_COMPONENTS
-MOONLINE_COMPONENTS=(
-  user "%n"
-  current_directory "%C"
-  date "%*"
+MOONLINE_COMPONENTS+=(
+  username "%n"
+  hostname "%M"
+  current_path "%~"
+  current_directory "%."
+  jobs "%j"
+  date "%D"
+  time "%*"
+  datetime "%d %*"
 )
