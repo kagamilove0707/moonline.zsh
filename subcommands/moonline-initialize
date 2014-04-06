@@ -32,15 +32,8 @@
   local sepr=$MOONLINE_SEPARATOR[2]
   local subsepl=$MOONLINE_SUBSEPARATOR[1]
   local subsepr=$MOONLINE_SUBSEPARATOR[2]
-  local target
-  local prompts
-  local content 
-  local flag
-  local color
-  local i
-  local j
-  local left
-  local right
+  local target content flag i j left right
+  local -a prompts color
 
   # initialize prompts
   PROMPT=''
@@ -71,7 +64,7 @@
         flag="$sepl"
       fi
     done
-    if [ "$content" != '' ]; then
+    if [[ "$content" != '' ]]; then
       content+="%{%k%}"
       content+="$sepl"
       PROMPT+=$'\n'"$content%{%f%} "
@@ -101,7 +94,7 @@
       RPROMPT+=" "
     fi
   done
-  if [ "$RPROMPT" != '' ]; then
+  if [[ "$RPROMPT" != '' ]]; then
     RPROMPT+="%{%f%k%}"
   fi
 }
