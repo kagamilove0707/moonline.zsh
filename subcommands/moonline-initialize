@@ -1,13 +1,16 @@
+# setup zsh options
 -moonline-setup() {
+  setopt prompt_subst
   autoload -Uz colors; colors
 }
 
+# find and load colorscheme file
 -moonline-load-colorscheme() {
   local flag=''
   local path
 
   for path in $moonline_colorscheme_path; do
-    if [ -f "$path/$MOONLINE_COLORSCHEME.zsh" ]; then
+    if [[ -f "$path/$MOONLINE_COLORSCHEME.zsh" ]]; then
       source "$path/$MOONLINE_COLORSCHEME.zsh"
       flag='true'
       break
@@ -22,7 +25,7 @@
 
 -moonline-initialize() {
   -moonline-setup
-  -moonline-load-colorscheme
+  -moonline-load-colorscheme || return 1
 
   # alias global variables
   local sepl=$MOONLINE_SEPARATOR[1]
