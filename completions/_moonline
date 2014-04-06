@@ -1,0 +1,11 @@
+#compdef moonline
+
+_moonline() {
+  _values \
+    'subcommands' \
+    'initialize[setup and initialize moonline.zsh]' \
+    'version[show version]' \
+    'help[show help]'
+}
+
+# vim: filetype=zsh

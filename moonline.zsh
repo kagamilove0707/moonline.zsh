@@ -36,10 +36,15 @@ moonline_colorscheme_path=(
 # colorscheme using moonline.zsh
 MOONLINE_COLORSCHEME="default"
 
-# set fpath for autoload
-fpath+=(
+# set fpath for autoload and completion
+fpath=(
   "$MOONLINE_HOME/subcommands"
+  "$MOONLINE_HOME/completions"
+  $fpath
 )
+
+# setup completion
+autoload -Uz _moonline; compdef _moonline moonline
 # define subcommands
 (){
   local subcommand
