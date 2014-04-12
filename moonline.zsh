@@ -55,7 +55,7 @@ autoload -Uz _moonline; compdef _moonline moonline
 
 # implementation of moonline command
 moonline() {
-  which moonline-${1} 1>/dev/null 2&>1 || {
+  which moonline-${1} &>/dev/null || {
     echo "${1} is not subcommand!"
     return 1
   } && moonline-${1} ${*[2,-1]}
