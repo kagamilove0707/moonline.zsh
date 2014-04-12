@@ -8,4 +8,5 @@ MOONLINE_COMPONENTS+=(
   time "%*"
   datetime "%d %*"
   status "%(?..%{%F{red}%})%?"
+  status2 "%(?.%F{cyan}^_^%f.%F{red}o_O%f)"
 )
