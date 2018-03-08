@@ -1,30 +1,30 @@
-#moonline.zsh
+# moonline.zsh
 
 __moonline.zsh__ provides a modern prompt for zsh.
 
 and moonline.zsh respects [lightline.vim]'s spirit.
 
-###Image
+### Image
 
 default color scheme:
 
 ![default color scheme](https://raw.github.com/wiki/kagamilove0707/moonline.zsh/images/moonline_default.png)
 
-##Sprit of this script (inspired by [lightline.vim])
+## Sprit of this script (inspired by [lightline.vim])
 
   * Minimalism. The core script is very small.
   * Configurability. You can create your own component and easily add to the prompt.
   * Orthogonality. Any plugin (framework) should not change the settings of another plugin. Such plugin-crossing settings should be written by users in `.zshrc`
 
-##Author
+## Author
 
 TSUKIKAGE Osana (<https://github.com/kagamilove0707>)
 
-##License
+## License
 
 This software is released under the MIT License, see LICENSE.
 
-##Installation
+## Installation
 
 install with the following commands.
 
@@ -38,13 +38,13 @@ but this is a one example, you should install moonline.vim to your dotfiles dire
 
 (or you used antigen, append `antigen bundle kagamilove0707/moonline.zsh` to `.zshrc`. however, antigen isn't save my spirit. so, I don't use antigen.)
 
-##TODO
+## TODO
 
   * write a tutorial, reference of the configuration and `moonline` command.
   * create more components.
   * create more color scheme.
 
-##Contributation
+## Contributation
 
   1. fork this repository (<https://github.com/kagamilove0707/moonline.zsh/fork>)
   2. clone your workspace (`git clone https://github.com/<your-name>/moonline.zsh`)
